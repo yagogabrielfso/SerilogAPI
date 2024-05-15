@@ -1,0 +1,1 @@
+2024-05-15 18:13:45.411 -03:00 [INF] HTTP GET /WeatherForecast responded 200 in 100.1089 ms
