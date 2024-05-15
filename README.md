@@ -17,9 +17,9 @@ No Package Manager Console, execute:
 
 > Configurar Appsettings de acordo com projeto
 
-1 - dotnet run
-2 - Acesse a API em https://localhost:5001
-3 - Verifique o console e o arquivo de log em logs/log.txt
+- dotnet run
+- Acesse a API em https://localhost:5001
+- Verifique o console e o arquivo de log em logs/log.txt
 
 
 
