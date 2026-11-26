@@ -1,0 +1,25 @@
+# Build
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# IDEs
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userprefs
+
+# Tests
+TestResults/
+*.coverage
+
+# NuGet
+packages/
+*.nupkg
+
+# Local secrets
+appsettings.*.local.json
+.env
