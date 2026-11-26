@@ -1,25 +1,38 @@
 # SerilogAPI
-projeto de uma API ASP.NET Core configurada com Serilog para logging
 
+![.NET 6](https://img.shields.io/badge/.NET-6-512BD4?logo=dotnet)
+![Serilog](https://img.shields.io/badge/logging-Serilog-1F6FEB)
 
-# Instalar Pacotes Serilog
+API ASP.NET Core com **logging estruturado** usando Serilog. A configuração dos destinos de log fica no `appsettings.json`, sem precisar recompilar para mudar o nível ou o destino.
 
-No Package Manager Console, execute:
+## O que o projeto mostra
+- Serilog no lugar do logger padrão do ASP.NET Core
+- Configuração lida do `appsettings.json` com `Serilog.Settings.Configuration`
+- Saída no console e em arquivo (`logs/log.txt`)
+- Logs estruturados, com propriedades em vez de texto concatenado. Por exemplo:
 
-- Install-Package Serilog.AspNetCore
-- Install-Package Serilog.Settings.Configuration
-- Install-Package Serilog.Sinks.Console
-- Install-Package Serilog.Sinks.File
+```csharp
+_logger.LogInformation("Pedido {PedidoId} criado para o cliente {ClienteId}", pedido.Id, cliente.Id);
+```
 
+## Pacotes
+- `Serilog.AspNetCore`
+- `Serilog.Settings.Configuration`
+- `Serilog.Sinks.Console`
+- `Serilog.Sinks.File`
 
+## Como rodar
 
-> Configurar Program.cs de acordo com projeto
+Pré-requisito: [.NET SDK 6](https://dotnet.microsoft.com/download/dotnet/6.0).
 
-> Configurar Appsettings de acordo com projeto
+```bash
+git clone https://github.com/yagogabrielfso/SerilogAPI.git
+cd SerilogAPI/SerilogAPI/SerilogAPI
+dotnet run
+```
 
-- dotnet run
-- Acesse a API em https://localhost:5001
-- Verifique o console e o arquivo de log em logs/log.txt
+Depois de fazer uma requisição, confira os logs no console e em `logs/log.txt`.
 
-
-
+## Próximos passos
+- [ ] Enviar os logs para o Seq ou para um coletor OpenTelemetry
+- [ ] Enriquecer os logs com o identificador da requisição (correlation id)
